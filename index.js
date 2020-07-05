@@ -9,17 +9,18 @@ function map(arr, func) {
 
 function reduce(arr, func, stPoint) {
     let current 
-    let i 
+    let index 
     if (!!stPoint) {
         current = stPoint
-        i = 0
+        index = 0
     } else {
-        current = arr[0]
-        i = 1
+        current = arr[0] 
+        // if we need to accumulate all the elements in this array - [1,2,3] the current is already 
+        // equal to 1, so we need to start iterating from the second element which we set on the next line
+        index = 1
     }
-    
-    for(i; i < arr.length; i++) {
-        current = func(arr[i], current)
+    for(index; index < arr.length; index++) {
+        current = func(arr[index], current)
     }
     return current
 }

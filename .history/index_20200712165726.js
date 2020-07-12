@@ -10,12 +10,13 @@ function map(arr, arrFunction){
   return newArr
 }
 
-function reduce(array, arrayFunction, startingPoint){
-  if (!startingPoint) {
-    array.some(v => v === true) ? startingPoint = array[0] :startingPoint = 0
+function reduce(array, arrayFunction, startingPoint = 0){
+  if (startingPoint) {
+    startingPoint = array[0]
   }
   array.forEach(index => {
     startingPoint = arrayFunction(index, startingPoint)
+  
   })
   return startingPoint
 }

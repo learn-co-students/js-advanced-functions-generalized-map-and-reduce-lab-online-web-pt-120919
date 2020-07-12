@@ -1,5 +1,3 @@
-import { start } from "repl"
-
 // import { start } from "repl"
 
 function map(arr, arrFunction){
@@ -12,10 +10,8 @@ function map(arr, arrFunction){
 
 function reduce(array, arrayFunction, startingPoint){
   if (!startingPoint) {
-    array.some(v => v === true) ? startingPoint = array[0] :startingPoint = 0
+    startingPoint = array[0]
   }
-  array.forEach(index => {
-    startingPoint = arrayFunction(index, startingPoint)
-  })
+  array.forEach(number => {startingPoint = arrayFunction(number, startingPoint)})
   return startingPoint
 }

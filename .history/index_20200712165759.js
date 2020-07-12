@@ -11,8 +11,11 @@ function map(arr, arrFunction){
 }
 
 function reduce(array, arrayFunction, startingPoint){
-  if (!startingPoint) {
-    array.some(v => v === true) ? startingPoint = array[0] :startingPoint = 0
+  if (startingPoint) {
+    startingPoint = array[0]
+  }
+  else {
+    startingPoint
   }
   array.forEach(index => {
     startingPoint = arrayFunction(index, startingPoint)

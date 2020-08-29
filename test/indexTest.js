@@ -21,7 +21,7 @@ describe('my own map-like methods', function() {
     it("transforms correctly", function(){
       expect(map([1, 2, 3, -9], function(a){return a * a})).to.eql([1, 4, 9, 81])
     })
-  })
+  }) 
  })
 })
 
